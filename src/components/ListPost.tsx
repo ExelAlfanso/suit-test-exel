@@ -75,7 +75,7 @@ export default function ListPost({
           !initialLoad && isLoading
             ? "flex items-center justify-center h-50"
             : "grid grid-cols-1 gap-6 px-4 pb-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-        }`}
+        } mb-10`}
       >
         {initialLoad && isLoading
           ? Array.from({ length: Number(size) || 6 }).map((_, idx) => (

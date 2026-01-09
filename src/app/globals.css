@@ -4,3 +4,14 @@
   --color-primary: #ff6600;
   --color-hover-primary: #e65c00;
 }
+
+@layer utilities {
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  }
+}

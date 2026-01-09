@@ -33,10 +33,10 @@ export default function Banner() {
 
       <motion.div
         style={{ y: textY }}
-        className="relative z-20 flex flex-col items-center justify-center h-full"
+        className="relative z-20 flex flex-col items-center justify-center h-full "
       >
-        <h1 className="text-4xl font-bold">Ideas</h1>
-        <p>Where all our great things begin</p>
+        <h1 className="text-6xl font-bold">Ideas</h1>
+        <p className="text-xl">Where all our great things begin</p>
       </motion.div>
       <div className="absolute left-0 z-30 w-full origin-bottom-left -skew-y-3 bg-white -bottom-100 h-100" />
     </motion.section>

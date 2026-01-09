@@ -11,7 +11,7 @@ export default function IdeaCard({ idea }: IdeaCardProps) {
   return (
     <Link
       href={`/ideas/${idea.slug}`}
-      className="relative overflow-hidden bg-white rounded-lg shadow-md"
+      className="relative overflow-hidden bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
     >
       <div className="w-full relative aspect-4/3">
         <Image
@@ -27,10 +27,12 @@ export default function IdeaCard({ idea }: IdeaCardProps) {
         />
       </div>
       <div className="p-4">
-        <h2 className="text-sm text-gray-500">
+        <h2 className="text-sm text-gray-500 font-semibold">
           {formatDate(idea.published_at)}
         </h2>
-        <h2 className="text-lg font-semibold text-gray-800">{idea.title}</h2>
+        <h2 className="text-lg font-semibold text-gray-800 line-clamp-3 leading-tight">
+          {idea.title}
+        </h2>
       </div>
     </Link>
   );

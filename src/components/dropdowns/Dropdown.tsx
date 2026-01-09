@@ -43,10 +43,10 @@ export default function Dropdown({
       <div ref={ref} className="relative min-w-40">
         <button
           onClick={() => setOpen(!open)}
-          className="flex items-center justify-between w-full px-3 py-2 text-sm text-black bg-white border-gray-200 rounded-full shadow-sm border hover:bg-gray-50"
+          className="cursor-pointer flex items-center justify-between w-full px-3 py-2 text-sm text-black bg-white  transition-colors duration-200 border-gray-200 rounded-full shadow-sm border hover:bg-gray-50"
         >
           {selected?.label}
-          <span className="ml-2">▾</span>
+          <span className="ml-2 text-4xl">▾</span>
         </button>
 
         {open && (
@@ -58,7 +58,7 @@ export default function Dropdown({
                   onChange?.(option.value);
                   setOpen(false);
                 }}
-                className={`cursor-pointer px-3 py-2 text-sm hover:bg-gray-100 text-black ${
+                className={`cursor-pointer transition-colors duration-100 px-3 py-2 text-sm hover:bg-gray-100 text-black ${
                   option.value === value ? "bg-gray-100 font-medium" : ""
                 }`}
               >
