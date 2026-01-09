@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Suit Ideas UI
 
-## Getting Started
+Small Next.js app that lists ideas from the SuitMedia API with pagination, sorting, and skeleton loading states.
 
-First, run the development server:
+### Requirements
+
+- Node.js 18+
+- npm (or any Node package manager)
+
+### Setup
+
+1. Install dependencies
+
+```bash
+npm install
+```
+
+2. Run dev server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` if you need to override defaults:
 
-## Learn More
+- `NEXT_PUBLIC_API_BASE_URL` (default: http://localhost:3000/api) — client axios base.
+- `NEXT_PUBLIC_SUIT_BASE_URL` (default: https://suitmedia-backend.suitdev.com/api) — upstream Suit API for the Next.js route.
 
-To learn more about Next.js, take a look at the following resources:
+### Core flows
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/ideas` page uses React Query to fetch ideas, with pagination + size + sort query params.
+- API route `/api/ideas` proxies to Suit API, sanitizes inputs, and appends `small_image` and `medium_image` sizes.
+- UI shows skeleton cards on first load and a loading spinner on subsequent fetches; pagination is disabled while loading.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Query params (client)
 
-## Deploy on Vercel
+- `page` (>=1)
+- `size` (10–50)
+- `sort`: `published_at` (oldest) or `-published_at` (newest)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev` — start development server
+- `npm run build` — production build
+- `npm start` — run built app
+- `npm run lint` — lint with ESLint
