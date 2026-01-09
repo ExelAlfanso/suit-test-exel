@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import SizeDropdown from "./dropdowns/SizeDropdown";
 import SortDropdown from "./dropdowns/SortDropdown";

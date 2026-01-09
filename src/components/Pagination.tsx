@@ -1,6 +1,4 @@
-import { useState } from "react";
 import PaginationButton from "./buttons/PaginationButton";
-import Loading from "./Loading";
 
 type PaginationProps = {
   currentPage: number;

@@ -1,4 +1,3 @@
-import Image from "next/image";
 export default function SkeletonCard() {
   return (
     <div className="relative overflow-hidden bg-white rounded-lg shadow-md">

@@ -1,7 +1,6 @@
 export function formatDate(date: string | Date): string {
   const dateObj = typeof date === "string" ? new Date(date) : date;
 
-  const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
   const months = [
     "Januari",
     "Februari",
