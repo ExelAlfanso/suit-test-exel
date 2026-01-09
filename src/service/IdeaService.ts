@@ -14,8 +14,7 @@ export async function fetchIdeas(
     },
   });
 
-  // Unwrap Next.js API envelope to return upstream payload { data, meta }
   return res.data.data;
 }
 
-export async function fetchIdeaBySlug(slug: string) {}
+// export async function fetchIdeaBySlug(slug: string) {}

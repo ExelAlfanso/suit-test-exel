@@ -21,9 +21,6 @@ export default function Header({
   const headerOpacity = useSpring(
     useTransform(scrollYProgress, [0, 0.2], [1, 0])
   );
-  // useMotionValueEvent(scrollYProgress, "change", (latest) => {
-  //   console.log("scrollYProgress:", latest);
-  // });
 
   return (
     <motion.header
