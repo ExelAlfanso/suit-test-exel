@@ -41,9 +41,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                     href={link.url}
                     onClick={onClose}
                     className={`text-lg font-semibold py-2 px-3 rounded-lg transition-colors ${
-                      isActive
-                        ? "bg-white bg-opacity-20 text-primary"
-                        : "text-primary hover:bg-white hover:bg-opacity-10"
+                      isActive ? "bg-primary text-white" : "hover:bg-gray-100"
                     }`}
                   >
                     {link.name}
